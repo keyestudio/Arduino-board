@@ -1,0 +1,297 @@
+# **keyestudio PRO MICRO 5V 16MHZ Development Board**
+
+
+
+**![KS0249 (5)](media/bf5edcc42251f32b497912ffce88eda9.jpeg)**
+
+
+## Description
+
+The processor core of Keyestudio PRO MICRO development board is ATMEGA32U4-MU,
+fully compatible with ARDUINO.
+
+It has 18 digital input/output pins (of which 5 can be used as PWM output), 9
+analog input, a 16 MHz crystal oscillator and a micro USB port.
+
+In addition, its working voltage is 5V and we can supply power via micro USB
+cable and port RAW GND (DC 7-9V).
+
+To facilitate the physical design, the board is not welded with pin headers. So
+you can solder the pin headers by yourself. And the package includes 2pcs yellow
+1\*12 2.54 straight pins and 1m black micro USB cable.
+
+## Specification
+
+-   Microcontroller: ATMEGA32U4-MU
+
+-   RAW: DC 7-9V
+
+-   **VCC: 5V at 500mA**
+
+-   Digital I/O Pins:18 (of which 5 provide PWM output)
+
+-   Analog Input Pins:9
+
+-   Maximum current for chip: 200mA
+
+-   Maximum current per pin: 40mA
+
+-   Recommended current per pin: 20mA
+
+-   8-bit Atmel AVR
+
+-   Flash Program Memory: 32kB
+
+-   EEPROM: 1kB
+
+-   Internal SRAM 2.5kB
+
+-   ADC:10-bit
+
+-   PWM:8bit
+
+1.  **Pin Interfaces:**
+
+![KS0503-1](media/7b03a5bc3bc9289960756f237672f9c6.jpeg)
+
+## Specialized Functions of Pins:
+
+Digital Port：RX（D0）、TX（D1）、D2-D10、D14-D16、A0-A3（D18-D21）
+
+Analog Port：A0-A3、D4（A6）、D6（A7）、D8（A8）、D9（A9）、D10（A10）
+
+**PWM Port (Pulse-Width Modulation):** D3、D5、D6、D9、D10
+
+**External interrupt**: D3(interrupt 0), D2(interrupt 1), D0(interrupt 2),
+D1(interrupt 3) and D7(interrupt 4)
+
+**Serial Communication Port**：RX (D0) ,TX (D1)
+
+**SPI Communication Port**：D14 (MISO), D15 (SCLK) and D16 (MOSI)
+
+**I2C Communication Port**：D2 (SDA) and D3（SCL）
+
+RAW：external power DC 7-9V
+
+## Download the Arduino IDE
+
+Enter Arduino IDE official website：https://www.arduino.cc/，
+
+Click![](media/6e0a6f98ef8676a190750e098ff76bc2.png)
+
+![](media/2dbe2fe9c5ca9ff009421c1527e762e2.png)
+
+![](media/585cbcf64045c22b13ceae74993c686c.png)
+
+You can download 1.8.13 version
+
+In this project, we use 1.8.12 version
+
+![](media/3f3dc9c365eb11e7052b3018f6af8b0f.png)
+
+Click ![](media/c615ffb6abce7a550aaaa5218a0a479b.png) to select the file to be
+installed.
+
+You need to install it manually if you
+click![](media/0538def64a1e0a0738670fa4760d1b1f.png); however, the file can be
+installed directly if you click![](media/7ad67cbcddb6c5b99226caeb2adfc267.png)，
+
+![](media/91529d16cd5b623561492362fd4dcc28.png)
+
+### 5.1 Installing Driver
+
+**Windows 10:**
+
+The driver will be automatically installed if you plug control board to your
+computer. Then the COM port is show below:
+
+![IMG_256](media/92a17f30a269e76265603a45c3283c87.png)
+
+You need to install it manually if your computer is other Windows system.
+
+We will take win7 system as example.
+
+1\. Place the **driver folder** on your desktop.
+
+The driver files are shown below:
+
+![IMG_256](media/1f3fc93c67e336736d5cc885e64fb364.png)
+
+2\. Connect board to your PC with Micro USB cable, and open device manager.
+
+![IMG_256](media/0e4b8a31c125318ef6766ea9a6cbb17f.png)
+
+1.  Right-click it and yellow exclamation mark appears
+
+    ![QQ图片20210319120927](media/93eabd5524f62b5693aa2cc9387a086c.png)
+
+    4\. Click“Browse.....manually”
+
+    ![IMG_256](media/5cd6a40ab7139aa3782c5ea98565c9d8.png)
+
+    5\. Find the“drivers”file，and tap“Next”.
+
+    .![IMG_256](media/e9804e5115bfc942b71de07921582060.png)
+
+1.  Click“install this driver software anyway”
+
+    ![IMG_256](media/1b675b30557b243922153d03c2a4f18d.png)
+
+    7\. Then click“Close”and check the serial port.
+
+    ![IMG_256](media/6f9c4d16713a32105c805878aaf8a587.png)
+
+    ![IMG_256](media/66ed48f58b372c153ace88bc421e7028.png)
+
+### 5.2 Set Boards Manager
+
+We need to set board before using it. Firstly we need to add the website of
+board manager in the ![](media/f0d6fce0fb8dbee777333b55010536d5.png)
+
+Website:
+https://raw.githubusercontent.com/sparkfun/Arduino_Boards/master/IDE_Board_Manager/package_sparkfun_index.json
+
+As shown below:
+
+![](media/461f5d10225b2b3c32dd7621b1020623.png)
+
+![](media/692484b7dce0712c2a577658b97876a6.png)
+
+Then restart Arduino IDE.
+
+The board is shown below:
+
+![](media/c1a0ea65f5a1abf795161ed9120ed805.png)
+
+Search **sparkfun** and install the related files.
+
+![](media/f24a2afd33b5642e0ffab9254e5fbc37.png)
+
+Click“Close”when the installation is finished.
+
+![](media/287d5ec242bb039a14b7c7cc60ca9a98.png)
+
+Then find out ![](media/c8fd92cf3723c0812f8fa4d065104ff4.png) as follows:
+
+![](media/ed56c804a4d190280ce53788e346abf8.png)
+
+**5.3 Arduino IDE Setting**
+
+Click![](media/675ae7298ce0973df720b2fbbb514caa.png)icon，open Arduino IDE.
+
+![](media/5362a7c9b7ca1d26dbc17c8299b6b63b.png)
+
+To avoid the errors when uploading the program to the board, you need to select
+the correct Arduino board that matches the board connected to your computer.
+
+Then come back to the Arduino software, you should click Tools→Board, select the
+board. (as shown below)
+
+![](media/9cd2e441398066c9fd3378f769098e46.png)
+
+Then select the correct working frequency
+
+![](media/46e9d4c7421281260b10e64d7749c103.png)
+
+Then select the correct COM port (you can see the corresponding COM port after
+the driver is successfully installed).
+
+![](media/d8bed7e67c008da8f424088f245ffeef.png)
+
+Before uploading the program to the board, let’s demonstrate the function of
+each symbol in the Arduino IDE toolbar.
+
+![](media/64c955b19a6b964fc428d6cb1f098772.png)
+
+A- Used to verify whether there is any compiling mistakes or not.
+
+B- Used to upload the sketch to your Arduino board.
+
+C- Used to create shortcut window of a new sketch.
+
+D- Used to directly open an example sketch.
+
+E- Used to save the sketch.
+
+F- Used to send the serial data received from board to the serial monitor.
+
+### 5.4 Hello World!
+
+Copy the following code to Arduino IDE.
+
+int val;
+
+int ledpin=13;
+
+void setup()
+
+{
+
+Serial.begin(9600);
+
+pinMode(ledpin,OUTPUT);
+
+}
+
+void loop()
+
+{
+
+val=Serial.read();
+
+if(val=='R')
+
+{
+
+digitalWrite(ledpin,HIGH);
+
+delay(500);
+
+digitalWrite(ledpin,LOW);
+
+delay(500);
+
+Serial.println("Hello World!");
+
+}
+
+}
+
+Set board and COM port, the corresponding board and COM port are shown on the
+lower right of IDE.
+
+![](media/a4db75498882ce063bb1f7ae056df640.png)
+
+Click![](media/ddd21c81338ae1f6b7f84de2a3caecf0.png)to start compiling the
+program, and check errors.
+
+![](media/94c647fd5e4c0451b360caec1a98cce5.png)
+
+![](media/fcdb35ba5b01cf3da462c165efd976e0.png)
+
+Click![](media/9c9158a5d49baa740ea2f0048f655017.png)to upload the program
+
+![](media/7a3dfd0a06d8c6438375a6bd0faa3810.png)
+
+![](media/6f781e7b314d428855cd19449fd50d60.png)
+
+Tap![](media/a78b27f77107a41d5d8accbef94911d2.png) to open serial monitor, set
+baud rate to 9600, input "R" and click“Send”. Then RX indicator flashes and
+serial monitor shows "Hello World!", which means "Hello World!" is sent by PRO
+MICRO development board.
+
+![](media/c14aa2daf9dd2d8dc625ac4c1d05264e.png)
+
+## Package List
+
+-   **Keyestudio PRO MICRO 5V 16MHZ development board\*1**
+
+-   USB cable \*1
+
+-   Yellow Pin headers \* 2pcs
+
+Resource
+
+<https://fs.keyestudio.com/KS0503>
+
+ 

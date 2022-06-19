@@ -1,0 +1,188 @@
+**KEYESTUDIO Mega Plus Board**
+
+1.  **Description**
+
+KEYESTUIDO Mega plus Board, whose processor core is ATMEGA2560-16AU, is fully
+compatible with ARDUINO Mega REV3.
+
+USB to TTL chip adopts more economic and stable CP2012.
+
+This plus board consists of 54-channel digital input and output ports, of which
+15 pins are served as PWM output, 16 analog inputs, 4 serial communication
+ports, one 16MHz crystal oscillator, 1 USB port, 1 power socket, 1 ICSP
+interface and 1 reset button.
+
+1.  **Specification**
+
+-   Microcontroller: ATMEGA2560-16AU
+
+-   USB to TTL chip：CP2102
+
+-   Operating Voltage: 5V
+
+-   Input Voltage (recommended):DC 7-12V
+
+-   Digital I/O Pins: 54 (D0-D53)
+
+-   PWM Digital I/O Pins：15(D2-D13 D44-D46)
+
+-   Analog Input Pins: 16(A0-A15)
+
+-   DC Current per I/O Pin: 20 mA
+
+-   DC Current for 3.3V Pin: 50 mA
+
+-   Flash Memory: 256 KB of which 8 KB used by bootloader
+
+-   SRAM: 8 KB
+
+-   EEPROM: 4 KB
+
+-   Clock Speed: 16 MHz
+
+-   LED_BUILTIN:D13
+
+# Interfaces Description
+
+![](media/025f20409040406145532b71475f635c.png)
+
+# Special Interfaces Description
+
+Serial communication interface(4 channel): Serial（D0 =RX0, D1 =TX0）,
+Serial1（D19 is RX1, D18 is TX1)
+
+Serial2 （D17 is RX2, D16 equals to TX2）, Serial3（D15 is RX3, D14 is TX3), D0
+and D1 are connected to ATMEGA16U2-MU
+
+PWM port（Pulse width modulation): D2-D13 and D44-D46
+
+External interrupt pins：D2（interrupt 0), D3(interrupt 1), D21（interrupt 2),
+D20 (interrupt 3), D19(interrupt 4）and D18（interrupt 5）
+
+SPI communication interface：D53 stands for SS, D51 is MOSI, D50 is MISO, D52
+equals to SCK
+
+IIC communication interface：D20 represents SDA, D21 is SCL
+
+# Install Arduino IDE and Driver
+
+## 5.1 Installing Arduino IDE
+
+We firstly navigate the ARDUINO official website: <https://www.arduino.cc/>,
+click “SOFTWARE”----”DOWNLOADS”, we’ll see the following page.
+
+![](media/e2c546514c421b19db7b4d5dce3aaddb.png)
+
+There are many versions for Arduino software but you only need to download the
+version suitable for your system. Here, we take WINDOWS system as an example to
+introduce how to download and install Arduino IDE.
+
+## ![](media/2cc017c4d0c3e0130ed0529449e5dd1f.png)
+
+There are two versions for your choice, one is an installer which can be
+directly downloaded in computer and the other is zip file which requires you to
+unzip and install it.
+
+![](media/745910f7138b08d5cbcb557f194b0679.png)
+
+Just click“JUST DOWNLOAD”.
+
+## 5.2 Installing Driver
+
+The downloading process is finished. Now, let’s install the driver of KEYESTUDIO
+PLUS control board. Its chip is CP2102 serial chip. In general, the driver of
+CP2102 serial chip is included in ARDUINO version 1.8 and above. The driver will
+be recognized and installed as long as you connect board to computer with USB.
+
+Some system can’t install automatically driver but you could install it by hand.
+Open the device manager of computer and you will see a yellow exclamation mark
+which means the driver of CP2102 isn’t installed successfully.
+
+Double-click the“Cp2102 USB to UART Bridge Controller”and a window pops up,
+click“update driver”, as shown below:
+
+![](media/5d3921d98a5be791b0b5166164b389e7.png)
+
+![](media/0946d3e3d322e66303a5e3fec0bb53c0.png)
+
+Click“Browse my computer for driver software” to find out the ARDUINO software
+to be installed.
+
+![](media/abff63e491413339a985a0a03df21106.png)
+
+There is a **DRIVERS** folder inside, enter it and the driver of CP210X series
+chip is shown.
+
+![](media/8e4f9bbf067cdc64fe15f91b276b1cd9.png)
+
+Choose the folder to be installed, click“Next”, the driver of CP2010 is
+installed successfully.
+
+![](media/bac9100368fdc4cc64c088b20af1b014.png)
+
+Up to now. Then you can right click“Computer”—\>“Properties”
+
+—\>“Device manager”, you will see the device as the figure shown below.
+
+The driver is installed successfully and the yellow exclamation mark is gone.
+
+![](media/6ec68bee80c913c6ad392c6e7898ed36.png)
+
+## 5.3 Arduino IDE Setting
+
+Click![](media/675ae7298ce0973df720b2fbbb514caa.png)icon and open Arduino IDE.
+
+![](media/e9a2d59afcff8121d18d8767326baa42.png)
+
+To avoid the errors when uploading the program to the board, you need to select
+the correct Arduino board that matches the board connected to your computer.
+
+Then come back to the Arduino software, you should click Tools→Board, select the
+board. (as shown below)
+
+![](media/54be59e77ba2325b4dc0d123d038a928.png)
+
+Then select the correct COM port (you can see the corresponding COM port after
+the driver is successfully installed)
+
+![](media/6ec68bee80c913c6ad392c6e7898ed36.png)
+
+![](media/2cff672f4d00823643e3f14257b94a79.png)
+
+Before uploading the program to the board, let’s demonstrate the function of
+each symbol in the Arduino IDE toolbar.
+
+![](media/edaab3d4579a4de42f3448c0e77363b1.png)
+
+1.  Used to verify whether there is any compiling mistakes or not.  
+    B- Used to upload the sketch to your Arduino board.  
+    C- Used to create shortcut window of a new sketch.  
+    D- Used to directly open an example sketch.  
+    E- Used to save the sketch.  
+    F- Used to send the serial data received from board to the serial monitor.
+
+## 5.4 Start Your First Program
+
+Open file to choose Examples—\>BASIC—\>BLINK
+
+![](media/90728207754f7132dfd295d20dcab92f.png)
+
+![](media/29971bc7f3260fd12fe58a9f1caf71c2.png)
+
+Set board and COM port, the bottom right corner of the IDE displays the
+corresponding board and COM port.
+
+![](media/3dfa896ce3111cf0f87c72fa94bb6252.png)
+
+Click![](media/ddd21c81338ae1f6b7f84de2a3caecf0.png)icon to start compiling the
+program, and check errors.
+
+![](media/12dcccb9ed028a927802b0c736ad48c3.png)
+
+Click![](media/9c9158a5d49baa740ea2f0048f655017.png)icon to start upload the
+program, upload successfully.
+
+![](media/111d4958e29257e59e4344b6218932e9.png)
+
+The program is uploaded successfully, LED of board lights on for 1s, and lights
+off for 1s.

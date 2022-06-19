@@ -1,0 +1,273 @@
+# **Keyestudio 328 PLUS Control Board**
+
+**![KS0546-01](media/38ffedcc64098a15f2a05f2298e4237f.jpeg)**
+
+
+
+## **1.Description**
+
+Doing experiments with electronic products, we often program on the Arduino IDE
+development environment with Arduino series microcontrollers.
+
+Keyestudio 328 PLUS control board is fully compatible with Arduino IDE development
+environment. It is as same as the Arduino UNO R3 board. Moreover, some
+improvements we made highly strengthen its function(as shown below). In order to
+wire efficiently, we equip it with a 1m USB cable with type-c interface for you.
+
+**![KS0546-03](media/002129fb118e78e8bf2da9f991bbb3c4.jpeg)**
+
+
+## **2.Specification**
+
+Microcontroller：ATMEGA328PB
+
+USB to serial chip: CH340C
+
+Working voltage: 5V
+
+External power: DC 6-15V (recommend 9V)
+
+Digital I / O pins: 14 (D0-D13)
+
+PWM channel: 6 (D3 D5 D6 D9 D10 D11)
+
+Analog input channel (ADC): 8 (A0-A7)
+
+Each I / O Port of DC output capability : 10 mA
+
+Output capability of 3.3V port: MAX150 mA
+
+Flash Memory: 32 KB (of which 0.5 KB is used by the bootloader)
+
+SRAM: 2 KB (ATMEGA328PB)
+
+EEPROM: 1 KB (ATMEGA328PB)
+
+Clock speed: 16MHz
+
+On-board LED pin: D13
+
+## **3. Interfaces**
+
+![KS0546-04](media/13949ffab0d255900354bd0eb4cf3dae.jpeg)
+
+
+## **4. Specialized Functions of Some Pins:**
+
+![keyestudio 328 PLUS](media/86a9241bbd633256217ee55dbda0d8fd.png)
+
+Serial communication interface: D0 is RX, D1 is TX
+
+PWM interface (pulse width modulation): D3 D5 D6 D9 D10 D11
+
+External interrupt interface: D2 (interrupt 0) and D3 (interrupt 1)
+
+SPI communication interface: D10 is SS, D11 is MOSI, D12 is MISO, D13 is SCK
+
+IIC communication port: A4 is SDA, A5 is SCL
+
+## **5. Install Arduino IDE and Driver**
+
+**5.1 Download the Arduino IDE**
+
+When getting this control board, we need to install Arduino IDE.
+
+Enter the website
+<https://www.arduino.cc/>，click![](media/6e0a6f98ef8676a190750e098ff76bc2.png)and![](media/547851627850831b48f17aeb3e81d748.png)
+
+![](media/727402001c0b10b4e2eef5e499608176.png)
+
+Download the version you want and the latest one is available for downloading
+too.
+
+![](media/585cbcf64045c22b13ceae74993c686c.png)
+
+Alternatively, you could select previous release.
+
+In this project, we use 1.8.12 version
+
+![](media/1614f073dea7b50945fa547b84076616.png)
+
+Click ![](media/bf9121d754e9373be268fcebe1c26975.png)to view the below page
+
+![](media/91529d16cd5b623561492362fd4dcc28.png)
+
+Click ![](media/0538def64a1e0a0738670fa4760d1b1f.png) to download an installer
+of Arduino 1.8.12 version，which needs to be installed manually. When you
+tap![](media/7ad67cbcddb6c5b99226caeb2adfc267.png)，a zip file of Arduino 1.8.12
+version will be directly downloaded, and you only need to unzip it to finish the
+installation.
+
+![](media/62aa12f4dc2e87db557459f2c6fab5bc.png)
+
+Click icon![](media/eb38059970cd241208142e24eeef94f9.png) to download Arduino
+IDE.
+
+**5.2Installing Driver**
+
+1.  **Windows system**
+
+Download CH340 driver：
+
+<https://sparks.gogo.co.nz/ch340.html>
+
+Next, let’s install Arduino driver.
+
+For different operating system, there may be slight difference in installation
+method. Below is an example in WIN 7.
+
+When you connect Arduino Uno to your computer the first time, right click
+“Computer” —\> “Properties”—\> “Device manager”, you can see “USB2.0-Serial”.
+
+![](media/5d29e0a4aaa612866225d3e437512525.png)
+
+Click “USB2.0-Serial”, select “Update Driver software”.
+
+![](media/6f0fd8828cab5d4bcc976bb3a61e240b.png)
+
+In this page, click “Browse my computer for driver software”.
+
+![](media/d837ffca003fe273c5a7e43b342751ed.png)
+
+Find the “usb_ch341_3.1.2009.06” file,Click “Next”.
+
+![](media/11a37bbf9430fe7e43d3e88943da3769.png)
+
+Installation completed; click “Close”.
+
+![](media/c20a2ecedec2d082a8fa60b9a44abcb9.png)
+
+After driver is installed, go to “Device manager” again. Right click “Computer”
+—\> “Properties”—\> “Device manager”, you can see CH340 device as below figure
+shows, also the Com port info.
+
+![图片1](media/fbfcfa3d8c45255f989da846397c28ec.png)
+
+**2.MAC system**
+
+Download CH340 driver：
+
+https://sparks.gogo.co.nz/ch340.html
+
+1.  Click V1.5 CH340 MaxOS Driver package
+
+![](media/15e95ab22ab7ea05a8f5ec95c096ac55.png)![](media/15e95ab22ab7ea05a8f5ec95c096ac55.png)
+
+1.  After the download, seen as below:
+
+![{12FD73E4-4425-2EFF-13D7-FC12A84CD6B9}](media/12fd73e444252eff13d7fc12a84cd6b9.jpeg)
+
+1.  click installation package and tap Continue
+
+![{4467619C-B16E-F24D-9DFC-D47BD81BE3B2}](media/691cf6301738b3cc65f0609b19552ad6.jpeg)
+
+1.  Click Install
+
+![{99F3F2F1-2911-BD56-7B9E-861CB6901F5B}](media/2e315365de27ced33043aea9f1760ac3.jpeg)
+
+1.  Input your user password and click Install Software
+
+![{E7F74A1B-F18E-9F0D-EA6B-2900FFF83408}](media/39f33ac35a5e39e375b25c5da890a315.jpeg)
+
+1.  Tap Continue Installation
+
+![{7112F323-5F8A-3F96-D022-5DFA4DCB82DB}](media/891330d4338aad093d6dc16f493533bf.jpeg)
+
+1.  Wait to install
+
+![{B0BB65D9-7BDF-6328-9E46-7DFFB5304C85}](media/46a63df908bb7e97a86f5ed491ccc028.jpeg)
+
+1.  Click Restart after the installation is finished
+
+![{DE9F7B4A-93CB-29B0-A814-82EE56715FB4}](media/07291e8ae8616258c8b52d71e5fc1bd0.jpeg)
+
+**5.3 Arduino IDE Setting**
+
+Click![](media/675ae7298ce0973df720b2fbbb514caa.png)icon，open Arduino IDE.
+
+![](media/e9a2d59afcff8121d18d8767326baa42.png)
+
+To avoid the errors when uploading the program to the board, you need to select
+the correct Arduino board that matches the board connected to your computer.
+
+Then come back to the Arduino software, you should click Tools→Board, to select
+the board. (as shown below)
+
+![](media/ec5ad8ed18812bdc8aefb76313f2f098.png)
+
+Then select the correct COM port (you can see the corresponding COM port after
+the driver is successfully installed)
+
+![图片1](media/fbfcfa3d8c45255f989da846397c28ec.png)
+
+![](media/cb4e03f6827a9dc3261d3743d22dedcd.png)
+
+Before uploading the program to the board, let’s demonstrate the function of
+each symbol in the Arduino IDE toolbar.
+
+![](media/2598b31529ac4bff88630522b97b6c41.png)
+
+A- Used to verify whether there is any compiling mistakes or not.
+
+B- Used to upload the sketch to your Arduino board.
+
+C- Used to create shortcut window of a new sketch.
+
+D- Used to directly open an example sketch.
+
+E- Used to save the sketch.
+
+F- Used to send the serial data received from board to the serial monitor.
+
+**5.4Start First Program**
+
+Open the file to select Example, and choose BLINK from BASIC, as shown below:
+
+![](media/6c85a7eabc1d4d63c7427bda9153da97.png)
+
+![](media/18078fd234f3398adecd4c8714a42800.png)
+
+Set board and COM port, the corresponding board and COM port are shown on the
+lower right of IDE.
+
+![](media/413b45c772c8320781fda7d38427ebbc.png)
+
+Click![](media/ddd21c81338ae1f6b7f84de2a3caecf0.png)to start compiling the
+program, check errors.
+
+![](media/a9b03903849d2b8d4d62c375d86b982e.png)
+
+Click![](media/9c9158a5d49baa740ea2f0048f655017.png)to upload the program,
+upload successfully.
+
+![](media/926ebed167235f3661201759c82e7e83.png)
+
+Upload the program successfully, the onboard LED lights on for 1s, lights off
+for 1s. Congratulation, you finish the first program.
+
+## **6.Troubleshooting：**
+
+1.If test code can’t be uploaded,
+click![](media/7e737219db74d3466fd957820e96e80e.png)
+
+However, if clicking ![](media/7e737219db74d3466fd957820e96e80e.png) (verifying
+test code) doesn’t work, there is something wrong with the test code or Arduino
+IDE.
+
+![](media/badbb63c5290459b4115ad5d499cf53d.png)
+
+2.If test code can be verified but not be uploaded, check the correct
+development board or COM port you choose.
+
+3.If you can’t select the correct COM port, just check if the driver of the
+development board is installed successfully.(refer to 5.2)
+
+![](media/aba7cc39ea320ef98ea43a318ac48c6f.png)
+
+4.Since unstable power supply from USB, you can change different USB ports if
+the development board can’t be recognized.
+
+5.When uploading test code, TXRX of the development board is not allowed to be
+used(fail to upload test code).
+
+If the Bluetooth module is used, upload test code then install the BT module

@@ -1,0 +1,242 @@
+# **Keyestudio MEGA PRO Development Board**
+
+
+
+**![1(5)](media/ce004f21d6bcd5a8f32e883867371c13.png)**
+
+
+
+## Introduction
+
+The MEGA control board, among the series of MCUs , is the most popular since it
+has numerous pins.
+
+However, a substantial number of pins don’t meet the space demand of DIY design.
+To tackle this issue, we roll out the Keyestudio MEGA PRO development board. In
+fact, its use method is as same as the official mega board, in addition to the
+different volume.
+
+Its processor core is ATMEGA2560-16AU. In the meantime, it has 54 digital
+input/output pins (of which 15 can be used as PWM outputs), 16 analog inputs, 4
+channel serial communication ports, a USB connection, 1 ICSP header, and a reset
+button. And all ports are extended by pins with the interval of 2.54mm.
+
+What’s more, you can burn the firmware for ATMEGA2560-16AU through the built-in
+ICSP port. The firmware of this chip is burnt well before delivery, therefore,
+you don’t need to burn the firmware.
+
+The power can be supplied through USB cable, port 5V , GND（DC 5V）, as well as
+Vin GND (DC 7-12V).
+
+##  **Specification**
+
+Microcontroller: ATMEGA2560-16AU
+
+USB to serial chip：CH340G
+
+Operating Voltage: 5V
+
+Input Voltage (recommended):DC 7-12V
+
+Digital I/O Pins: 54 (D0-D53)
+
+PWM Digital I/O Pins：15(D2-D13 D44-D46)
+
+Analog Input Pins: 16(A0-A15)
+
+DC Current per I/O Pin: 20 mA
+
+DC Current for 3.3V Pin: 50 mA
+
+Flash Memory: 256 KB of which 8 KB used by bootloader
+
+SRAM: 8 KB
+
+EEPROM: 4 KB
+
+Clock Speed: 16 MHz
+
+LED_BUILTIN:D13
+
+## **Pinout Diagram:**
+
+![KS502标注图(Eng)_画板 1](media/b4e3a6c375558ee7c1a9a2f0f469624e.png)
+
+| 1  | External Power Ports           | External input: DC 7-12V                                                                                                                                                                                                                                                                                                         |
+|----|--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 2  | Ground                         | GND                                                                                                                                                                                                                                                                                                                              |
+| 3  | 5V                             | DC 5V input/output voltage（supply power for control board when inputting 5V）                                                                                                                                                                                                                                                   |
+| 4  | 3.3V                           | Provide DC 3.3V output voltage                                                                                                                                                                                                                                                                                                   |
+| 5  | AREF                           | Analog reference. Used to set the external reference voltage(0-5V)                                                                                                                                                                                                                                                               |
+| 6  | Reset Button Port              | Can be connected to press button, as same as reset button                                                                                                                                                                                                                                                                        |
+| 7  | Serial communication port      | The default serial communication port， RX responds to D0（digital port), TX responds to D1（digital port)                                                                                                                                                                                                                       |
+| 8  | Digital Ports                  |  Have 54 digital input/output pins (of which 15 can be used as PWM outputs). These pins can be configured as digital input pin to read the logic value (0 or 1). Or used as digital output pin to drive different modules like LED, relay, etc.                                                                                  |
+| 9  | Analog Ports                   | 16 analog pins (A0-A15)                                                                                                                                                                                                                                                                                                          |
+| 10 | ATMEGA2560 （Microcontroller） | Each board has its own microcontroller,. The MCU of this board is ATMEGA2560-16AU.                                                                                                                                                                                                                                               |
+| 11 | ICSP Pin                       | the AVR, an Arduino micro-program header consisting of MOSI, MISO, SCK, RESET, VCC, and GND. It is often called the SPI (serial peripheral interface) and can be considered an "extension" of the output. In fact, slave the output devices to the SPI bus host. When connecting to PC, program the firmware to ATMEGA2560-16AU. |
+| 12 | L Indicator                    | When D13 is high level, LED will be on; when it is low level, LED will be off                                                                                                                                                                                                                                                    |
+| 13 | ON Indicator                   | LED is on when control board is plugged in power, otherwise, it will be off                                                                                                                                                                                                                                                      |
+| 14 | TX Indicator                   |  When Arduino board communicates via serial port and sends the message, TX led will flash                                                                                                                                                                                                                                        |
+| 15 | RX Indicator                   | When Arduino board communicates via serial port and receive the message, RX led will flash.                                                                                                                                                                                                                                      |
+| 16 | Reset Button                   | Reset your control board                                                                                                                                                                                                                                                                                                         |
+| 17 | Micro USB                      | Supply power for control board and upload code                                                                                                                                                                                                                                                                                   |
+| 18 | USB to serial chip             | CH340G, transform USB signals of computer to serial signals                                                                                                                                                                                                                                                                      |
+
+##  **Specialized Functions of Some Pins:**
+
+Serial Communication Port(4-channel)：Serial（D0 corresponds to RX0, D1 is
+equivalent to TX0）, Serial1（D19 corresponds RX1, D18 is equivalent to TX1),
+Serial2 (D17 corresponds to RX2, D16 stands for TX2) and Serial3（D15 stands for
+RX3, D14 corresponds to TX3）.
+
+RX（D0）and TX（D1）are connected to the USB to serial chip of CH340G
+
+-   **Serial Communication:** D0 (RX0) and D1 (TX1); Serial 1: D19 (RX1) and D18
+    (TX1); Serial 2: D17 (RX2) and D16 (TX2); Serial 3: D15 (RX3) and D14 (TX3).
+
+-   **PWM Pins (Pulse-Width Modulation):** D2 to D13, and D44 to D46.
+
+-   **External Interrupts:** D2 (interrupt 0), D3 (interrupt 1), D18 (interrupt
+    5), D19 (interrupt 4), D20 (interrupt 3), and D21 (interrupt 2).
+
+-   **SPI communication:** D53 (SS), D52 (SCK), D51 (MOSI), D50 (MISO).
+
+-   **IIC communication:** D20 (SDA); D21 (SCL).
+
+## **4. Windows System**
+
+ **4.1 Download Arduino IDE**
+
+When getting this control board, we need to install Arduino IDE
+
+Enter the website <https://www.arduino.cc/>，and click
+![](media/6e0a6f98ef8676a190750e098ff76bc2.png)\>![](media/547851627850831b48f17aeb3e81d748.png)
+
+![](media/556bf0bf1e5124eb63399aeb0ca381d5.png)
+
+You can select the latest version-----1.8.13. Alternatively, the previous
+release is your another choice.
+
+In this project, we use 1.8.12 version.
+
+![](media/2510e5810075573b4c5a61ce5dc3678f.png)
+
+Click![](media/47d9dc6547c11049dc424789c22bdfbc.png)to enter the new page. As
+shown below;
+
+The **Windows installer** needs installing manually. Yet , the **Windows zip
+file for non admin install**，a zip file of Arduino 1.8.12 version, can be
+directly downloaded and installed.
+
+![](media/0d881660806bad51429640b2412a9d48.png)
+
+**4.2 Install Driver**
+
+For this part, we need to install the driver of Arduino IDE
+
+First, let’s attach USB cable to computer. The driver can be installed
+automatically if the PC system is Windows 10, however, you need to install the
+driver manually if the PC system is other version.
+
+The USB to serial chip of control board is CH340G, therefore, we will install
+its driver(usb_ch341_3.1.2009.06).
+
+Click Computer----- Properties----- Device Manager, as shown below:
+
+![](media/c71282321c1496b288d9cbc40048e069.png)
+
+Click ![](media/8a28db282ad16fa8b774e5eac645659f.png)and“Update Driver Program”
+
+![](media/a1990e4fede027a2f407632ea99db84f.png)
+
+Jump into the following page and select“Browse my computer for driver software”.
+
+![](media/dc27c46ecc96141df0ff60cf605875f3.png)
+
+Search the **usb_ch341_3.1.2009.06 folder**
+
+![](media/a567c7f1839241a12f4fa1101053b4c8.png)
+
+After the driver is installed, you need to click **Close.**
+
+![](media/caedea109edc36ef68b610fd59b65956.png)
+
+Click Computer----- Properties----- Device Manager, as shown below
+
+![图片1(3)](media/f82e43973ab9e54af0f4cf1f1808a132.jpeg)
+
+**4.3 Arduino IDE Setting**
+
+Click![](media/675ae7298ce0973df720b2fbbb514caa.png)icon to pen Arduino IDE.
+
+![](media/e9a2d59afcff8121d18d8767326baa42.png)
+
+When downloading the sketch to the board, you must select the correct name of
+Arduino board that matches the board connected to your computer. As shown below;
+
+![](media/1329e07fd62f8cb94db7bf7a5187f822.png)
+
+Then select the correct COM port (you can see the corresponding COM port after
+the driver is successfully installed).
+
+![图片1(3)](media/f82e43973ab9e54af0f4cf1f1808a132.jpeg)
+
+![](media/4a3f6090ae3799825ba160489cc31ab7.png)
+
+![](media/ecb8df6e1bb46cf9e4b4acb0677856e6.png)
+
+A- Used to verify whether there is any compiling mistakes or not.  
+B- Used to upload the sketch to your Arduino board.  
+C- Used to create shortcut window of a new sketch.  
+D- Used to directly open an example sketch.  
+E- Used to save the sketch.  
+F- Used to send the serial data received from board to the serial monitor.
+
+## 4.4 Start A Program
+
+Open the file to select **Example**, and click **BASIC**\>**BLINK**, as shown
+below:
+
+![](media/7a6acac824309c19e500f06b32cbd89c.png)
+
+![](media/2a80d66cff7ffd055a3a04ff94ba1e55.png)
+
+Set the correct **COM port,** and the corresponding board and COM port are shown
+on the lower right of IDE.
+
+![](media/6942bac9ca002e0b1907efc6dc2f7001.png)
+
+Click![](media/ddd21c81338ae1f6b7f84de2a3caecf0.png)to start compiling the
+program, and check errors.
+
+![](media/6ee4e5973b02192a299e41cf1c45516a.png)
+
+Click![](media/9c9158a5d49baa740ea2f0048f655017.png)to upload the program
+
+![](media/ff56a1a004035609a75dd8a1ad019e92.png)
+
+After the program is uploaded successfully, the onboard LED blinks.
+Congratulation, you finish the first program.
+
+# 5. MAC System
+
+## 5.1 Install Arduino IDE on MAC System
+
+The installation instruction is as same as the chapter 4.1, as shown below:
+
+![](media/93fb6f19be3ac6e5fd992aab76c5bb60.png)
+
+## 5.2 Download the Driver of CH340
+
+<https://fs.keyestudio.com/CH340-MAC>
+
+## 5.3 How to Install the Driver of CH340
+
+<https://wiki.keyestudio.com/Download_CH340_Driver_on_MAC_System>
+
+## 5.4 Arduino IDE Setting
+
+The setting method is as same as the chapter 4.3 except from COM port, as shown
+below.
+
+# ![IMG_256](media/c04e1a809e2f3f9e59a2406d581d42a0.jpeg)

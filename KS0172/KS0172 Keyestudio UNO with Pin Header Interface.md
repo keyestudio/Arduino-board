@@ -1,0 +1,400 @@
+
+
+# **Keyestudio UNO with Pin Header Interfaces**
+
+**![](media/a37bae7f1393f231a22bf4620b309215.png)**
+
+## Introduction:
+
+keyestudio UNO with pin headers has the same basic functions as [keyestudio UNO
+R3 BOARD](http://wiki.keyestudio.com/index.php/Ks0001_keyestudio_UNO_R3_BOARD).
+It is a microcontroller board based on the
+[ATMEGA328P-AU](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf),
+which has the same function as ATMEGA328P(-PU), fully compatible with ARDUINO
+UNO REV3.
+
+It has 14 digital input/output pins (of which 6 can be used as PWM outputs), 6
+analog inputs, a 16 MHz crystal oscillator, a USB connection, a power jack, 2
+ICSP headers, and a reset button.
+
+This UNO with pin headers makes the improvement based on keyestudio UNO R3
+board.
+
+It breaks out all the digital and analog pins in the form of 3PIN headers (G, V,
+S).
+
+S pins correspond to all 14 digital pins, 6 analog pins. G pins for ground. V
+pins for VCC. You can control the voltage of VCC via a slide switch for 5V or
+3.3V.
+
+When switched to 5V, level on serial communication port is 5V, voltage of pins
+is 5V. When switched to 3.3V, level on serial communication port is 3.3V,
+voltage of pins is 3.3V.
+
+It also breaks out two 4PIN headers for serial communication and IIC
+communication. So it is more easier to connect external sensors and modules.
+
+As for keyestudio UNO R3 board, its voltage-regulator chip is NSP1117. When
+connect external power, output 5V, drive current is 1A.
+
+But for this keyestudio UNO with headers, its voltage-regulator chip is
+MP2307DN. When connect external power, output 5V, drive current is 2A.
+
+It contains everything needed to support the microcontroller; simply connect it
+to a computer with a USB cable or power it with a AC-to-DC adapter or battery to
+get started.
+
+# TECH SPECS:
+
+| **Microcontroller**             | ATMEGA328P-AU                                        |
+|---------------------------------|------------------------------------------------------|
+| **Operating Voltage**           | 5V                                                   |
+| **Input Voltage (recommended)** | DC 7-12V                                             |
+| **Digital I/O Pins**            | 14 (D0-D13)                                          |
+| **PWM Digital I/O Pins**        | 6 (D3 D5 D6 D9 D10 D11)                              |
+| **Analog Input Pins**           | 6 (A0-A5)                                            |
+| **DC Current per I/O Pin**      | 20 mA                                                |
+| **DC Current for 3.3V Pin**     | 50 mA                                                |
+| **Flash Memory**                | 32 KB (ATmega328) of which 0.5 KB used by bootloader |
+| **SRAM**                        | 2 KB                                                 |
+| **EEPROM**                      | 1 KB                                                 |
+| **Clock Speed**                 | 16 MHz                                               |
+| **LED_BUILTIN**                 | D13                                                  |
+
+# Dimensions:
+
+![](media/6befe7ce0a9e23b90a3487eb3aa91ede.jpeg)
+
+# Element and Interfaces:
+
+Here is an explanation of what every element and interface of the board does:
+
+![](media/3d362970d87c77eaeb259992ad1c5d97.jpeg)
+
+|   ![](media/3bb1c25abe86a3f60ac7be228eee073a.png) | **ICSP (In-Circuit Serial Programming) Header** ICSP is the AVR, an Arduino micro-program header consisting of MOSI, MISO, SCK, RESET, VCC, and GND. It is often called the SPI (serial peripheral interface) and can be considered an "extension" of the output. In fact, slave the output devices under the SPI bus host. When connecting to PC, program the firmware to ATMEGA328P-AU.                                                                                           |
+|---------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ![](media/90474bf3195205c042f837d56f7f5bc3.png)   | **Serial Communication Pin** Connect to serial communication.  4Pins (GND, VCC (3.3V or 5V controlled by slide switch), RX, TX)                                                                                                                                                                                                                                                                                                                                                     |
+| ![](media/90a9ee4c95ce2062a0aba4ea4e6a966c.png)   | **GND**  Ground pins                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ![](media/9692086f6c487165f7745faae51ef11f.png)   | **V Pins (VCC)** Power the external sensors and modules. Select the voltage of 3.3V or 5V via a slide switch.                                                                                                                                                                                                                                                                                                                                                                       |
+| ![](media/f4f88bf6bbad85b84c2c9ed66b358042.png)   | **Digital I/O** It has 14 digital input/output pins, labeled D0 to D13 (of which 6 can be used as PWM outputs). These pins can be configured as digital input pin to read the logic value (0 or 1). Or used as digital output pin to drive different modules like LED, relay, etc. The pin D3, D5, D6, D9, D10, and D11 can be used to generate PWM.  For digital port, you can connect through female headers, or through pin headers (labeled S) of 2.54mm pitch.                 |
+| ![](media/e1e2b5ea7dc64f0d3718d686f1900b00.png)   | **AREF**  For Analog reference. Sometimes used to set an external reference voltage (0-5V) as the upper limit of analog input pins.                                                                                                                                                                                                                                                                                                                                                 |
+| ![](media/2111adc0fbd7859beb30059380236465.png)   | **SDA** IIC communication pin                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ![](media/9de1b27e2187eac0f881adec62fba633.png)   | **SCL** IIC communication pin                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| ![](media/2b17b0cf84a31ccc02181c4f4f98f297.png)   | **ICSP (In-Circuit Serial Programming) Header** ICSP is an AVR, an Arduino micro-program header consisting of MOSI, MISO, SCK, RESET, VCC, and GND. Connected to ATMEGA 16U2-MU. When connecting to PC, program the firmware to ATMEGA 16U2-MU.                                                                                                                                                                                                                                     |
+| ![](media/7f07f9d662bafeaae657330c523601b6.png)   | **Microcontroller**  Each control board has its own microcontroller. You can regard it as the brain of your board. Microcontrollers are usually from ATMEL. Before you load a new program on the Arduino IDE, you must know what IC is on your board. This information can be checked at the top of IC. The microcontroller used in this board is [ATMEGA328P-AU](http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf). |
+|  ![](media/298bdd01b65872b389f57bfc11c26905.png)  | **D13 LED**  There is a built-in LED driven by digital pin 13. When the pin is HIGH value, the LED is on, when the pin is LOW, it's off.                                                                                                                                                                                                                                                                                                                                            |
+| ![](media/f0471c9f339df5933afe68e6daa0853b.png)   | **TX LED** Onboard you can find the label: TX (transmit) When UNO board communicates via serial port, send the message, TX led flashes.                                                                                                                                                                                                                                                                                                                                             |
+|  ![](media/aa9a27dba1b083f18f7251deeab2839b.png)  | **RX LED** Onboard you can find the label: RX(receive ) When UNO board communicates via serial port, receive the message, RX led flashes.                                                                                                                                                                                                                                                                                                                                           |
+| ![](media/595d159e619fce1eb4e3d31d57439ef3.png)   | **Power LED** LED on means that your circuit board is correctly powered on. Otherwise LED is off.                                                                                                                                                                                                                                                                                                                                                                                   |
+| ![](media/bdd3025540a33f0a9dd6205bf375a603.png)   | **USB Connection** You can power the board via USB connection. Or can upload the program to the board via USB port. Connect the board to PC using a USB cable via USB port.                                                                                                                                                                                                                                                                                                         |
+| ![](media/ee8c12ee2e2a4bba0a07339c335e07c9.png)   | **ATMEGA 16U2-MU**  USB to serial chip, can convert the USB signal into serial port signal.                                                                                                                                                                                                                                                                                                                                                                                         |
+| ![](media/36ac45df4db3ae6ea2ec409c26177c68.png)   | **Slide Switch** You can slide the switch to control the voltage of pin V (VCC), 3.3V or 5V.                                                                                                                                                                                                                                                                                                                                                                                        |
+| ![](media/f005354fbb7cc7a7f74c84f2b4d32aa3.png)   | **Voltage Regulator** To control the voltage provided to the UNO board, as well as to stabilize the DC voltage used by the processor and other components. Convert an external input DC7-12V voltage into DC 5V, then switch DC 5V to the processor and other components, output DC 5V, drive current is 2A.                                                                                                                                                                        |
+| ![](media/ca4ffeaccf51ddc9148844b0a0b785c0.png)   | **DC Power Jack** The board can be supplied with an external power DC7-12V from the DC power jack.                                                                                                                                                                                                                                                                                                                                                                                  |
+| ![](media/acd4248a7de9ea9001fff564675b0f17.png)   | **IOREF**  Used to configure the operating voltage of microcontrollers. Use it less.                                                                                                                                                                                                                                                                                                                                                                                                |
+| ![](media/0ed701382f464cb6943b88ad111f8af1.png)   | **RESET Header**  Connect an external button to reset the board. The function is the same as reset button.                                                                                                                                                                                                                                                                                                                                                                          |
+| ![](media/70983783eac48007fb2b60d204a5febc.png)   | **Pin 3V3 Output** Provides 3.3V voltage output                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ![](media/ec24832167fa80b09cf01c8c4c9be5a2.png)   | **Pin 5V Output** Provides 5V voltage output                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|  ![](media/ba0adaf292c71dd1a69521743a7f961e.png)  | **Vin**  You can supply an external voltage input DC7-12V through this pin to the board.                                                                                                                                                                                                                                                                                                                                                                                            |
+| ![](media/61d803764d915bbbc1f11076776bfcf1.png)   | **Analog Pins** The UNO board has 6 analog inputs, labeled A0 through A5.  Can also used as digital pins, A0=D14, A1=D15, A2=D16, A3=D17, A4=D18, A5=D19. For analog port, you can connect through female headers, or through pin headers (labeled S) of 2.54mm pitch.                                                                                                                                                                                                              |
+| ![](media/3bd12afea7b05f08e9317fcb88d5b167.png)   | **IIC Communication Pin** Connect to the IIC communication.  4Pins (GND, VCC (3.3V or 5V controlled by slide switch), SDA, SCL)                                                                                                                                                                                                                                                                                                                                                     |
+| ![](media/99540e141c98dbd36ae3808fc23d5c6d.png)   | **RESET Button** You can reset your board to start the program from the initial status.                                                                                                                                                                                                                                                                                                                                                                                             |
+
+**![](media/56eeeae40dad0d7ac114aa15407e7676.jpeg)**
+
+# Specialized Functions of Some Pins:
+
+-   **Serial communication:**  Digital pins 0 (RX) and 1 (TX).
+
+-   **PWM Interfaces (Pulse-Width Modulation):** D3, D5, D6, D9, D10, D11
+
+-   **External Interrupts:** D2 (interrupt 0) and D3 (interrupt 1). These pins
+    can be configured to trigger an interrupt on a low value, a rising or
+    falling edge, or a change in value.
+
+-   **SPI communication:** D10 (SS), D11 (MOSI), D12 (MISO), D13 (SCK). These
+    pins support SPI communication using the SPI library.
+
+-   **IIC communication:**  A4 (SDA); A5(SCL)
+
+# Detailed Test with ARDUINO Software as follows:
+
+## Step1 \| Download the Arduino environment (IDE)
+
+When you get the UNO development board, first you should install the Arduino
+software and driver.
+
+We usually use the Windows software Arduino 1.5.6 version. You can download it
+from the link below:
+
+[https://www.arduino.cc/en/Main/OldSoftwareReleases\#1.5.x](https://www.arduino.cc/en/Main/OldSoftwareReleases#1.5.x)
+
+Or you can browse the ARDUINO website to download the latest version from this
+link, <https://www.arduino.cc>, pop up the following interface.
+
+![](media/03bcbac0c292a11cc4969884a260c24e.png)
+
+Then click the **SOFTWARE** on the browse bar, you will have two options ONLINE
+TOOLS and DOWNLOADS.
+
+![](media/c4beb46eae68ef824353b8cc72a19768.png)
+
+Click **DOWNLOADS**, it will appear the latest software version of ARDUINO 1.8.5
+shown as below.
+
+![](media/95bb95aac8d2e5b92e8bfb5f6d3c3177.png)
+
+In this software page, on the right side you can see the version of development
+software for different operating systems. ARDUINO has a powerful compatibility.
+You should download the software that is compatible with the operating system of
+your computer.
+
+We will take **WINDOWS system** as an example here. There are also two options
+under Windows system, one is installed version, the other is non-installed
+version.
+
+For simple installed version, first click **Windows Installer**, you will get
+the following page.
+
+![](media/87d68bf0f659efd12d5a2421f3b0985b.jpeg)
+
+![](media/81ed11f0705f918d1457cb772e41719f.png)
+
+This way you just need to click JUST DOWNLOAD, then click the downloaded file to
+install it.
+
+For non-installed version, first click Windows ZIP file, you will also get the
+pop-up interface as the above figure.
+
+Click JUST DOWNLOAD, and when the ZIP file is downloaded well to your computer,
+you can directly unzip the file and click the icon of ARDUINO software to start
+it.
+
+## Installing Arduino (Windows):
+
+Install Arduino with the exe. Installation package downloaded well.
+
+![](media/0410a9a2e63c51fee1d04b59041a2884.jpeg)
+
+Click *“I Agree”* to see the following interface.
+
+![](media/7bbc90969d7a44f397e0d63428e87c82.jpeg)
+
+Click *“Next”*. Pop up the interface below.
+
+![](media/567d62b3dfce772c3e969c653651f6ad.jpeg)
+
+You can press Browse… to choose an installation path or directly type in the
+directory you want. Then click “Install” to initiate installation.
+
+![](media/69d2c16b683d24d8c03109c853905f97.jpeg)
+
+Wait for the installing process, if appear the interface of Window Security,
+just continue to click Install to finish the installation.
+
+![](media/4201c1f8cfe13dad71fac63ae275820c.png)
+
+## Installing Driver:
+
+Next, we will introduce the driver installation of UNO development board. The
+driver installation may have slight differences in different computer systems.
+So in the following let’s move on to the driver installation in the WIN 7
+system.
+
+The Arduino folder contains both the Arduino program itself and the drivers that
+allow the Arduino to be connected to your computer by a USB cable. Before we
+launch the Arduino software, you are going to install the USB drivers.
+
+![](media/bd93889abeed8f6b1c70b145de108d7d.png)
+
+Plug one end of your USB cable into the Arduino and the other into a USB socket
+on your computer.
+
+When you connect UNO board to your computer at the first time, right click the
+icon of your *“Computer” —\>for “Properties”—\> click the “Device manager”*,
+under “Other Devices”, you should see an icon for “Unknown device” with a little
+yellow warning triangle next to it. This is your Arduino.
+
+![](media/27f6de2d3f0125ed978586e8b99b2033.png)
+
+Then right-click on the device and select the top menu option (Update Driver
+Software...) shown as the figure below.
+
+![](media/8ac7d3085c739ec9c9a89151be325dc9.png)
+
+It will then be prompted to either “Search Automatically for updated driver
+software” or “Browse my computer for driver software”. Shown as below. In this
+page, select “Browse my computer for driver software”.
+
+![](media/31fdd7c7d5c23f2aced927993c8314cd.png)
+
+After that, select the option to browse and navigate to the “drivers” folder of
+Arduino installation.
+
+![](media/4a638bb3e87737db0a4795418dcf9cf3.jpeg)
+
+Click “Next” and you may get a security warning, if so, allow the software to be
+installed. Shown as below.
+
+![](media/3b743c92f153068c5417126e25e9ef88.png)
+
+Installation completed, click “Close”.
+
+![](media/4ed2b0f5f38a5f9dbd667146f96740e3.png)
+
+Up to now, the driver is installed well. Then you can right click *“Computer”
+—\>“Properties”—\>“Device manager”*, you should see the device shown below.
+
+![](media/42b28476abc3d8b9b8845afb71a3a466.png)
+
+## Introduction for Arduino IDE Toolbar:
+
+Double-click the icon of Arduino software downloaded well, you will get the
+interface shown below.
+
+![](media/2fbd15be3868df7eb1654b0981c34f79.png)
+
+(Note: if the Arduino software loads in the wrong language, you can change it in
+the preferences dialog. See [the environment
+page](http://arduino.cc/en/Guide/Environment#languages) for details.)
+
+![](media/c9727104a8861d23c03723bd629509a1.png)
+
+The functions of each button on the Toolbar are listed below:
+<http://wiki.keyestudio.com/index.php/File:IDE.png>
+
+![](media/29f46713e687c2599b13e9f612d39bc9.png)
+
+| **![](media/4e25ec81facd0a9de45e48138cb17bbb.png)**  **Verify/Compile** | Check the code for errors                           |
+|-------------------------------------------------------------------------|-----------------------------------------------------|
+| **![](media/e0a80f9e708873ec352697c610864b37.png)**  **Upload**         | Upload the current Sketch to the Arduino            |
+| **![](media/f1458edbef80c7786dd4c23a5af3f8e8.png)** **New**             | Create a new blank Sketch                           |
+| **![](media/1a16bf9f039e242fcceba567b52675d5.png)** **Open**            | Show a list of Sketches                             |
+| **![](media/258e5f7024d8d3e095499b67c72974ae.png)** **Save**            | Save the current Sketch                             |
+| **![](media/08794db4162e505053e39fafd259e971.png)** **Serial Monitor**  | Display the serial data being sent from the Arduino |
+
+## Step2\| Connect the board
+
+![](media/e635d026576383b6d6ea9fae9212cf86.jpeg)Connect the board to your
+computer using the USB cable. The red power LED should go on.
+
+## Step3\| Select the Arduino Board
+
+Open the Arduino IDE, you’ll need to click the “Tools”, then select the Board
+that corresponds to your Arduino.
+
+![](media/5a8c8873c38b42bc15079e87892a8c93.png)
+
+## Step4\| Select your serial port
+
+Select the serial device of the Arduino board from the **Tools \| Serial Port
+menu**. This is likely to be COM3 or higher (COM1and COM2 are usually reserved
+for hardware serial ports). To find out, you can disconnect your Arduino board
+and re-open the menu; the entry that disappears should be the Arduino board.
+Reconnect the board and select that serial port.
+
+Here you should select COM 3 as below.
+
+![](media/c19faf822e9009d065235de63b408960.png)
+
+**Note:** to avoid errors, the COM Port should keep the same as the Ports shown
+on Device Manager.
+
+![](media/42b28476abc3d8b9b8845afb71a3a466.png)
+
+![](media/b6a6259722d7d07b8ecb4f92f1862142.png)
+
+## Step5\| Upload the Program
+
+Below is an example program for displaying the Hello World!
+
+Copy and paste the code to the Arduino environment IDE.
+
+**///////////////////////////////////////////////////////////////////////////////////////////////**
+
+int val;
+
+int ledpin=13;
+
+void setup()
+
+{
+
+Serial.begin(9600);
+
+pinMode(ledpin,OUTPUT);
+
+}
+
+void loop()
+
+{
+
+val=Serial.read();
+
+if(val=='R')
+
+{
+
+digitalWrite(ledpin,HIGH);
+
+delay(500);
+
+digitalWrite(ledpin,LOW);
+
+delay(500);
+
+Serial.println("Hello World!");
+
+}
+
+}
+
+**///////////////////////////////////////////////////////////////////////////////////////////////**
+
+Then click verify button to check the errors. If compiling successfully, the
+message "Done compiling." will appear in the status bar.
+
+![](media/44e8356462a29eccef8144f812ca640d.png)
+
+After that, click the “Upload” button to upload the code. Wait a few seconds -
+you should see the RX and TX leds on the board flashing. If the upload is
+successful, the message "Done uploading." will appear in the status bar.
+
+![](media/44e8356462a29eccef8144f812ca640d.png)
+
+## Step6\| Open the Serial Monitor
+
+After that, click the serial monitor button to open the serial monitor.
+
+![](media/3b5e49114b0ba399112a3c63836b8754.png)
+
+Then set the baud rate as 9600, enter an “R” and click Send, you should see the
+RX led on the board blink once, and then D13 led blink once, finally "Hello
+World!" is showed on the monitor, the TX led blink once.
+
+![](media/ac92cfda71208d789cf0246a7da75c35.png)
+
+# For Extension:
+
+**![](media/f117da1e301b3835bbf24b90e4c81e63.png)**
+
+# Other Links:
+
+You can download the datasheet from the link:
+
+<https://drive.google.com/open?id=1otyBI7as3S5qBd9GZYyVwYdRMLF7qDnr>
+
+Software Download:
+
+<https://drive.google.com/open?id=12D-JkXdNm03Qt4dlPQr3RP6OmgXqpvHc>
+
+You might also want to look at:
+
+[the reference](http://arduino.cc/en/Reference/HomePage) for the Arduino
+language;
+
+# Troubleshooting:
+
+If you have problems, please see the [troubleshooting
+suggestions](http://arduino.cc/en/Guide/Troubleshooting).
